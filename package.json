@@ -1,0 +1,15 @@
+{
+  "name": "ptcg-chs-datasets",
+  "version": "1.0.0",
+  "description": "![The Brave Shroomish!](/img/11/28.png)",
+  "main": "convert_text.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "better-sqlite3": "^12.5.0"
+  }
+}
