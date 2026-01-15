@@ -42,7 +42,7 @@ function formatJson(filePath) {
 
 
 if (import.meta.url === `file://${process.argv[1]}`) {
-    convertUnicodeToReadable('../ptcg_chs_infos.json', 'ptcg_chs_infos.json');
+    convertUnicodeToReadable('../../ptcg_chs_infos.json', 'ptcg_chs_infos.json');
     formatJson('ptcg_chs_infos.json');
 }
 
