@@ -40,10 +40,32 @@ function formatJson(filePath) {
     console.log(`已格式化: ${absolutePath}`);
 }
 
+/**
+ * 
+ * @param {string} filePath 文件路径
+ * @returns 返回 JSON 数据
+ */
+export async function formatJsonAsync(filePath) {
+    const absolutePath = path.resolve(filePath);
+    if (!fs.existsSync(absolutePath)) {
+        console.error(`文件不存在: ${absolutePath}`);
+        process.exit(1);
+    }
+
+    const content = await fs.promises.readFile(absolutePath, 'utf-8');
+    const json = JSON.parse(content);
+    return json;
+}
+
 
 if (import.meta.url === `file://${process.argv[1]}`) {
     convertUnicodeToReadable('../../ptcg_chs_infos.json', 'ptcg_chs_infos.json');
     formatJson('ptcg_chs_infos.json');
+}
+
+export {
+    convertUnicodeToReadable,
+    formatJson
 }
 
 
